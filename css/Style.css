@@ -90,6 +90,7 @@ img {
 }
 .navbar-brand span,
 .VideoTittle span {
+  font-size: 20px;
   color: #ffffff;
 }
 .navbar-default .navbar-nav li a {
@@ -553,6 +554,7 @@ html[xmlns] .slides {
   margin: 3rem 0px -70px 0px;
 }
 .VideoTittle gg {
+  font-size: 20px;
   color: white;
 }
 .VideoTittle img {
@@ -916,7 +918,7 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
   }
   .order-form .input-label {
     color: white;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 900;
     margin-left: 20px;
     margin-bottom: 10px;
