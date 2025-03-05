@@ -84,9 +84,9 @@ $(function(){
 
  // Define the blocks for each district
  const blocks = {
-  N_24_PGS: ['Select Block/City', 'Akaipur','Balia','Bongaon','Bhashanpota', 'Chowberia', 'Chandpara','Chhaigharia','Ganrapota','Gobardanga', 'Gopalnagar','Habra','Helencha','Kalupur','Media Bazar','Nahata','Nataberia','Palla','Thakurnagar'],
-  S_24_PGS: ['Upcoming soon', ],
-  Nadia: ['Select Block/City','Gangnapur','Kupars','Majhergram','Rainagar','Ranaghat'],
+  N_24_PGS: ['আপনার ব্লক/শহর বাছুন', 'আকাইপুর','বলিয়া','বনগাঁ','ভাষনপোতা', 'চৌবেরিয়া', 'চাঁদপাড়া','ছয়ঘরিয়া','গাঁড়পোতা','গোবরডাঙ্গা', 'গোপালনগর','হাবরা','হেলেঞ্চা','কালুপুর','মেদিয়াবাজার','নহাটা','নাটাবেরিয়া','পাল্লা','ঠাকুরনগর'],
+  S_24_PGS: ['আসতে চলেছে..', ],
+  Nadia: ['আপনার ব্লক/শহর বাছুন','গাগ্নাপুর','কুপার্স','মাঝেরগ্রাম','রায়নগর','রানাঘাট'],
  };
 
  // Function to populate the block select input based on the selected district
