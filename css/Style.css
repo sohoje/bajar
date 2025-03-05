@@ -984,6 +984,9 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
     margin-left: 5px;
   }
   
+  /*-----------------------------------*\
+ * #Notice
+\*-----------------------------------*/
 
   .notice-popup {
     position: fixed;
@@ -1003,7 +1006,7 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
 .notice-popup.active {
     opacity: 1;
     visibility: visible;
-    z-index: 999;
+    z-index: 90;
 }
 
 .notice-content {
@@ -1018,13 +1021,12 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 25px;
+    top: 0;
+    right: 15px;
+    font-size: 50px;
     cursor: pointer;
     color: red;
 }
-
 
 /*-----------------------------------*\
  * #NO INTERNET
@@ -1040,7 +1042,7 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
   color: #fff;
   background-color: #fff;
   transition: 500ms;
-  z-index: 50;
+  z-index: 99;
 }
 
 #connection-checker-full-screen span {
