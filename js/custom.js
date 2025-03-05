@@ -139,8 +139,19 @@ if (!clickDiv || !hiddenDiv) {
   });
 }
 
+//******************************************** Notice ********************************* */
 
+        // Show the popup after 2 seconds
+        window.onload = function() {
+          setTimeout(function() {
+              document.getElementById('popup').classList.add('active');
+          }, 2000); // 2000 milliseconds = 2 seconds
+      };
 
+      // Close the popup when the close button is clicked
+      document.getElementById('closeBtn').onclick = function() {
+          document.getElementById('popup').classList.remove('active');
+      };
 
 //******************************************** NO INTERNET ********************************* */
 
