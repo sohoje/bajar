@@ -547,20 +547,35 @@ html[xmlns] .slides {
 }
 /* end flexslider */
 
-/* Videos  */
+/*Page tittle  */
 
 .VideoTittle {
-  text-align: center;
-  margin: 3rem 0px -70px 0px;
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
 }
-.VideoTittle gg {
-  font-size: 20px;
-  color: white;
+
+.VideoTittle span {
+  display: inline-block;
+  animation: slideRightToLeft 25s linear infinite;
 }
-.VideoTittle img {
-  width: 70px;
-  margin-bottom: 10px;
+
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(0); /* Start off to the right */
+  }
+  0% {
+    transform: translateX(3%); /* Show text */
+  }
+  100% {
+    transform: translateX(-100%); /* Move text off to the left */
+  }
 }
+
+/*Page tittle  */
+
 .VideoDiv {
   display: flex;
   margin-top: 60px;
@@ -899,7 +914,7 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
   
   .order {
     color: rgb(0, 89, 148);
-    margin-top: 90px;
+    margin-top: 50px;
     background: var(--bright-navy-blue);
     padding-block: var(--section-padding);
   }
