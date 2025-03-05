@@ -196,6 +196,42 @@ function connection_checker() {
 setInterval(connection_checker, 1000)
 
 
+//******************************************** APK ********************************* */
+
+let deferredPrompt;
+const addToHomeScreenBtn = document.getElementById('add-to-home-screen-btn');
+
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+
+  addToHomeScreenBtn.style.display = 'block';
+  addToHomeScreenBtn.addEventListener('click', () => {
+    deferredPrompt.prompt();
+
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User added the app to home screen');
+      } else {
+        console.log('User dismissed the app installation');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 //share button
