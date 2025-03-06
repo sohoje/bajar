@@ -1,1148 +1,446 @@
-:root {
-  --ThemeColor: #ffffff;
-  --BackgroundBox: #ffffff;
-  --FontColor1: #ffffff;
-  --FontColor2: #000000;
-  --FontFamily: "poppins-bold", sans-serif !important;
-  --Background: rgb(0, 173, 165);
-  --Background2: rgb(10, 0, 100);
-}
-body {
-  font-family: var(--FontFamily);
-  font-weight: 400;
-  position: relative;
-  background: var(--Background);
-}
-
-h1,
-h2,
-h3,
-h4,
-.navbar-default .navbar-nav li a,
-.navbar-default .navbar-nav > li > a:focus {
-  color: var(--ThemeColor);
-  font-family: var(--FontFamily);
-  font-weight: 600;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus {
-  background-color: transparent;
-}
-a {
-    color: #04a7cf;
-}
-a:hover {
-  color: #19ff00;
-  text-decoration: none;
-}
-hr {
-  border: 1px solid var(--ThemeColor);
-  width: 100px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 700px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 900px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1000px;
-  }
-}
-
-/* start all section */
-.templatemo-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  position: relative;
-}
-/* end all section */
-
-/* start nagivation */
-.navbar-default {
-  background: var(--Background);
-  border: none;
-  -webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
-  box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
-  margin: 0;
-  padding: 0;
-}
-.navbar-default .navbar-brand {
-  color: var(--ThemeColor);
-  font-size: 40px;
-  line-height: 35px;
-}
-.navbar-brand strong img {
-  width: 120px;
-  scale: 1.2;
-}
-.navbar-brand span,
-.VideoTittle span {
-  font-size: 20px;
-  color: #ffffff;
-}
-.navbar-default .navbar-nav li a {
-  line-height: 35px;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover {
-  color: var(--ThemeColor);
-  background-color: transparent;
-}
-.navbar-default .navbar-toggle {
-  border: none;
-  padding-top: 10px;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background: var(--ThemeColor);
-  border-color: transparent;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent;
-}
-/* end navigation */
-
-/* start flow */
-
-.flow {
-  display: flex;
-  position: fixed;
-  width: auto;
-  background-color: transparent;
-  z-index: 5000;
-  right: 0;
-  top: 60%;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  font-size: 30px;
-  padding: 0;
-}
-.flow ul {
-  list-style: none;
-  text-decoration: none;
-  background-color: transparent;
-}
-.flow ul li {
-  list-style: none;
-  text-decoration: none;
-  margin: 10px;
-  background-color: transparent;
-}
-
-.flow ul li a {
-  text-align: center;
-  background-color: transparent;
-  text-decoration: none;
-}
-.flow ul li a i {
-  width: 100%;
-  text-align: center;
-  background-color: transparent;
-  padding: 0.8rem;
-  background-color: #007ba0;
-  color: rgb(255, 255, 255);
-  border-radius: 10px;
-}
-.flow ul li a i:hover {
-  background-color: white;
-  color: rgb(0, 0, 0);
-}
-/* ---------------------------------------------  */
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25%,
-  75% {
-    transform: translateX(-10px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-}
-
-/* ---------------------------------------------  */
-@keyframes fastshake {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-15px);
-  }
-  50% {
-    transform: translateX(15px);
-  }
-  75% {
-    transform: translateX(-15px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-/* ---------------------------------------------  */
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* ---------------------------------------------  */
-@keyframes blinkshake {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  10% {
-    transform: translateX(-5px);
-    opacity: 0.8;
-  }
-  20% {
-    transform: translateX(5px);
-    opacity: 0.6;
-  }
-  30% {
-    transform: translateX(-5px);
-    opacity: 0.8;
-  }
-  40% {
-    transform: translateX(5px);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateX(0);
-    opacity: 0.4;
-  }
-  60% {
-    transform: translateX(-5px);
-    opacity: 0.6;
-  }
-  70% {
-    transform: translateX(5px);
-    opacity: 0.8;
-  }
-  80% {
-    transform: translateX(-5px);
-    opacity: 0.6;
-  }
-  90% {
-    transform: translateX(5px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-/* ---------------------------------------------  */
-.shaking {
-  animation: fastshake .6s ease-in-out forwards;
-}
-/* end Flow */
-
-/* start flexslider */
-.flexslider {
-  margin-top: 114px;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  overflow: hidden;
-}
-
-.flex-direction-nav a {
-  color: #ffffff;
-  width: 40px;
-  height: 40px;
-  background-color: #0000003b;
-  border-radius: 3px;
-  margin: -20px 0 0 0;
-  text-align: center;
-  line-height: 40px;
-}
-
-.flex-caption {
-  position: absolute;
-  top: 39%;
-  width: 100%;
-  text-align: center;
-  z-index: 999;
-  color: var(--FontColor1);
-}
-.slider-title {
-  font-size: 50px;
-}
-.slider-subtitle {
-  color: var(--FontColor1);
-}
-.slider-title,
-.slider-subtitle {
-  text-transform: uppercase;
-}
-.slider-description {
-  font-size: 18px;
-  line-height: 28px;
-  padding-left: 200px;
-  padding-right: 200px;
-}
-.no-js .slides > li:first-child {
-  display: block;
-}
-
-/* FlexSlider Default Theme
-*********************************/
-.flexslider {
-  margin: 0;
-  position: relative;
-  zoom: 1;
-}
-
-.flex-viewport {
-  max-height: 2000px;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-.loading .flex-viewport {
-  max-height: 300px;
-}
-
-.flexslider .slides {
-  zoom: 1;
-}
-
-.carousel li {
-  margin-right: 5px;
-}
-
-/* Direction Nav */
-.flex-direction-nav {
-  height: 0;
-}
-
-.flex-direction-nav a {
-  text-decoration: none;
-  display: block;
-  position: absolute;
-  top: 55%;
-  z-index: 10;
-  overflow: hidden;
-  opacity: 0;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.flex-direction-nav .flex-prev {
-  left: -50px;
-}
-
-.flex-direction-nav .flex-next {
-  right: -50px;
-}
-
-.flexslider:hover .flex-prev {
-  opacity: 1;
-  left: 30px;
-}
-
-.flexslider:hover .flex-next {
-  opacity: 1;
-  right: 30px;
-}
-
-.flexslider:hover .flex-next:hover,
-.flexslider:hover .flex-prev:hover {
-  opacity: 1;
-}
-
-.flex-direction-nav .flex-disabled {
-  opacity: 0;
-  filter: alpha(opacity=0);
-  cursor: default;
-}
-
-.flex-direction-nav a:before {
-  font-family: "FontAwesome";
-  font-size: 24px;
-  display: inline-block;
-  content: "\f104";
-}
-
-.flex-direction-nav a.flex-next:before {
-  content: "\f105";
-}
-
-/* Pause/Play */
-.flex-pauseplay a {
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
-  opacity: 0.8;
-  z-index: 10;
-  overflow: hidden;
-  cursor: pointer;
-  color: #000;
-}
-
-.flex-pauseplay a:before {
-  font-family: "flexslider-icon";
-  font-size: 20px;
-  display: inline-block;
-  content: "\f004";
-}
-
-.flex-pauseplay a:hover {
-  opacity: 1;
-}
-
-.flex-pauseplay .flex-play:before {
-  content: "\f003";
-}
-
-/* Control Nav */
-.flex-control-nav {
-  width: 100%;
-  position: absolute;
-  bottom: -40px;
-  text-align: center;
-}
-
-.flex-control-nav li {
-  display: inline-block;
-  zoom: 1;
-}
-
-.flex-control-paging li a {
-  width: 11px;
-  height: 11px;
-  display: block;
-  background: #666;
-  background: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  text-indent: -9999px;
-  border-radius: 20px;
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-}
-
-.flex-control-paging li a:hover {
-  background: #333;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.flex-control-paging li a.flex-active {
-  background: #000;
-  background: rgba(0, 0, 0, 0.9);
-  cursor: default;
-}
-
-.flex-control-thumbs {
-  margin: 5px 0 0;
-  position: static;
-  overflow: hidden;
-}
-
-.flex-control-thumbs li {
-  width: 25%;
-  float: left;
-  margin: 0;
-}
-
-.flex-control-thumbs img {
-  width: 100%;
-  display: block;
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.flex-control-thumbs img:hover {
-  opacity: 1;
-}
-
-.flex-control-thumbs .flex-active {
-  opacity: 1;
-  cursor: default;
-}
-
-@media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev {
-    opacity: 1;
-    left: 10px;
-  }
-
-  .flex-direction-nav .flex-next {
-    opacity: 1;
-    right: 10px;
-  }
-}
-.flexslider {
-  padding: 65px 0 0 0;
-}
-
-.flexslider .slides > li {
-  display: none;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {
-  width: 100%;
-  display: block;
-}
-
-.flex-pauseplay span {
-  text-transform: capitalize;
-}
-
-/* Clearfix for the .slides element */
-.slides:after {
-  content: "\0020";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-html[xmlns] .slides {
-  display: block;
-}
-
-* html .slides {
-  height: 1%;
-}
-.flex-container a:active,
-.flexslider a:active,
-.flex-container a:focus,
-.flexslider a:focus {
-  outline: none;
-}
-
-.slides,
-.flex-control-nav,
-.flex-direction-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-/* end flexslider */
-
-/*Page tittle  */
-
-.VideoTittle {
-  font-size: 24px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
-}
-
-.VideoTittle span {
-  display: inline-block;
-  animation: slideRightToLeft 25s linear infinite;
-}
-
-@keyframes slideRightToLeft {
-  0% {
-    transform: translateX(0); /* Start off to the right */
-  }
-  0% {
-    transform: translateX(3%); /* Show text */
-  }
-  100% {
-    transform: translateX(-100%); /* Move text off to the left */
-  }
-}
-
-/*Page tittle  */
-
-.VideoDiv {
-  display: flex;
-  margin-top: 60px;
-  padding: 30px;
-  background-color: transparent;
-  border-radius: 23px;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.VideoDiv .Videos {
-  width: 310px;
-  height: 700px;
-  margin: 0px 10px;
-  background-color: var(--Background);
-  padding: 5px 5px;
-  border-radius: 23px;
-  margin-bottom: 30px;
-}
-
-.VideoDiv .Videos .Videos {
-  padding: 0px;
-  border-radius: 0px;
-  background-color: transparent;
-  margin-bottom: 0px;
-}
-
-.VideoDiv .Videos img {
-  border-radius: 23px;
-}
-
-.VideoDiv .Videos video {
-  min-height: 350px;
-  max-height: 570px;
-  min-width: 100%;
-  max-width: 100%;
-  border-radius: 12px;
-}
-
-.VideoDiv .Videos h4 {
-  font-size: 15px;
-  margin-top: 5px;
-  margin-bottom: 0px;
-  display: inline-block;
-  font-weight: 100;
-  color: #ffffff;
-  line-height: 25px;
-  margin-left: 3px;
-}
-
-.VideoDiv .Videos span {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.video-player h4 span {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.views {
-  font-size: 12px;
-}
-.share-button {
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  /* font-size: 1.5em; */
-  margin-left: 10px;
-  transition: color 0.3s;
-  padding-right: 20px;
-}
-
-.share-button:hover {
-  color: #9b9b9b; /* Slightly darker on hover */
-}
-
-#copyNotification {
-  z-index: 500;
-  display: none; /* Initially hidden */
-  position: fixed;
-  top: 10%;
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust for exact center */
-  background: #000000;
-  color: #ffffff;
-  border: 1px solid rgb(255, 255, 255);
-  padding: 30px;
-  border-radius: 5px;
-  opacity: 0; /* Initially invisible */
-  transition: opacity 0.5s;
-}
-
-#copyNotification.show {
-  display: block;
-  opacity: 1; /* Make visible */
-}
-/* Videos end */
-
-/* start footer */
-footer {
-  background: #202020;
-  border-bottom: 10px solid var(--FontColor1);
-  color: var(--FontColor1);
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-/* end footer */
-
-/* start social icon */
-.social-icon {
-  position: relative;
-  padding: 0;
-  margin: 0;
-}
-.social-icon li {
-  display: inline-block;
-  list-style: none;
-}
-.social-icon li a {
-  color: #666;
-  font-size: 30px;
-  text-decoration: none;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-}
-.social-icon li a:hover {
-  background: var(--ThemeColor);
-  color: var(--FontColor1);
-}
-/* end social icon */
-
-@media only screen and (max-width: 360px) {
-  .navbar-default .navbar-brand {
-    padding-top: 6px;
-  }
-  .img-about {
-    margin-top: 40px;
-  }
-}
-
-/********************************
-IPAD LANDSCAPE (1024x768)
-********************************/
-/********************************
-IPAD PORTRAIT (768x1024)
-********************************/
-@media only screen and (max-width: 960px) {
-  .flex-caption {
-    top: 20%;
-  }
-  .slider-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  .slider-description {
-    font-size: 16px;
-    margin: 0 auto;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .navbar-default .navbar-brand {
-    font-size: 35px;
-    padding-top: 10px;
-  }
-}
-/********************************
-IPHONE 4-4S-5 LANDSCAPE (568x320)
-********************************/
-@media only screen and (max-width: 760px) {
-  .flexslider {
-    padding: 50px 0 0 0;
-  }
-  .flex-caption {
-    display: none;
-  }
-  .flex-direction-nav a {
-    top: 60%;
-  }
-  .templatemo-section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-}
-/********************************
-IPHONE 4-4S-5 PORTRAIT (320x568)
-********************************/
-
-/* Hide scrollbar
-
-/*width*/
-::-webkit-scrollbar {
-  width: 0px;
-}
-
-/*track*/
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/*thumb*/
-::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-
-
-
-
-
-
-
-/*-----------------------------------*\
-   * #SERVICES
-  \*-----------------------------------*/
-
-  .services {
-    padding: 30px 0px;
-    margin: 30px 4px;
-    border: 2px solid #83838399;
-    border-radius: 36px;
-    box-shadow: 0px 0px 20px 10px #3a37375c;
-  }
-  
-  .services-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .searchbarforservices {
-    padding: 10px;
-    border-radius: 20px;
-    border: 2px solid rgb(133 135 187 / 20%);
-    box-shadow: inset 5px 5px 4px rgb(166 155 237 / 50%),
-      3px 5px 0px rgb(127 141 221 / 10%);
-  }
-  
-  .shortservices {
-    background-color: blueviolet;
-    padding: 10px;
-  }
-  .services-box {
-    width: 100%;
-    overflow: hidden;
-  }
-  .services-cont {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    margin: 35px 0px;
-  }
-  
-  .service {
-    border-radius: 20px;
-    display: flex;
-    width: 130px;
-    height: 100px;
-    flex-direction: column;
-    margin: 15px;
-    cursor: pointer;
-    justify-content: space-evenly;
-    align-items: center;
-    box-shadow: 2px 2px 5px #5a5a5c;
-  }
-  .service:hover {
-    background-color: #fc0000;
-  }
-  .service > p {
-    display: none;
-  }
-  .miniprice {
-    font-size: 10px;
-    color: #3b9304;
-    font-weight: 800;
-    padding: 5px;
-  }
-  .service-top {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 60%;
-    align-items: center;
-    justify-content: flex-start;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    padding: 5px 0;
-  }
-  .service-top > h3 {
-    font-size: 10px;
-    display: flex;
-    width: 120px;
-    height: 70px;
-    margin: 0;
-    align-items: center;
-    font-weight: 900;
-    color: brown;
-  }
-  .div_icon {
-    display: flex;
-    align-items: center;
-    width: 50px;
-    height: 40px;
-    padding: 2px;
-  }
-  .div_icon > img {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .service ion-icon {
-    font-size: 30px;
-    color: #3b79c9;
-  }
-  .service .fa {
-    font-size: 30px;
-    color: #3b79c9;
-  }
-  .icn {
-    width: 80%;
-    height: 50%;
-  }
-  @media (min-width: 580px) {
-  }
-  
-  .order {
-    color: rgb(0, 89, 148);
-    margin-top: 50px;
-    background: var(--bright-navy-blue);
-    padding-block: var(--section-padding);
-  }
-  #task-details {
-    display: flex;
-    background-color: #ffffff;
-    width: 100%;
-    overflow: hidden;
-    padding: 7px;
-    align-items: center;
-    font-weight: 100;
-    color: #585858;
-    font-size: 13px;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-  }
-  .order-form .input-label {
-    color: white;
-    font-size: 16px;
-    font-weight: 900;
-    margin-left: 20px;
-    margin-bottom: 10px;
-  }
-  .input-label2 {
-    width: 100%;
-    background: white;
-    padding: 10px 15px;
-    font-size: var(--fs-5);
-    border-radius: 30px;
-  }
-  .input-field_big {
-    width: 100%;
-    height: 300px;
-    text-align: left;
-    line-height: normal; 
-    background: rgb(255, 255, 255);
-    font-size: 15px;
-    border-radius: 10px;
-    outline: none;
-    padding: 10px 20px; 
-    resize: none; 
-    box-sizing: border-box; 
-    white-space: pre-wrap; 
-    overflow-wrap: break-word;
-  }
-  .order-form .input-field {
-    width: 100%;
-    background: rgb(255, 255, 255);
-    padding: 10px 15px;
-    font-size: var(--fs-5);
-    border-radius: 20px;
-  }
-  
-  .order-form .input-field::placeholder {
-    color: var(--spanish-gray);
-  }
-  
-  .order-form .input-field::-webkit-datetime-edit {
-    color: var(--spanish-gray);
-    text-transform: uppercase;
-  }
-  
-  .order-form .input-wrapper {
-    margin-bottom: 15px;
-  }
-  
-  .order .btn {
-    width: 100%;
-    --border-width: 1px;
-    font-weight: 900;
-    margin-top: 35px;
-    color: #3b9304;
-  }
-  
-  
-  .promoFlex {
-    display: flex;
-  }
-  .promoGo {
-    font-size: 20px;
-    color: red;
-    margin-left: 5px;
-  }
-  
-  /*-----------------------------------*\
- * #Notice
-\*-----------------------------------*/
-
-  .notice-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;
-}
-
-.notice-popup.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 90;
-}
-
-.notice-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    max-width: 600px;
-    text-align: center;
-    font-size: 20px;
-    position: relative;
-}
-
-.close-btn {
-    position: absolute;
-    top: 0;
-    right: 15px;
-    font-size: 50px;
-    cursor: pointer;
-    color: red;
-}
-
-/*-----------------------------------*\
- * #NO INTERNET
-\*-----------------------------------*/
-
-
-#connection-checker-full-screen {
-  visibility: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  font-size: 50px;
-  color: #fff;
-  background-color: #fff;
-  transition: 500ms;
-  z-index: 99;
-}
-
-#connection-checker-full-screen span {
-  /* background-color: #000c; */
-  border-radius: 30px;
-  padding: 40px;
-  color: #fff;
-}
-
-#connection-checker-full-screen img {
-  width: 100%;
-  height: auto;
-}
-
-.middle-center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-}
-
-.flip-in-diag-2-br {
-  -webkit-animation: flip-in-diag-2-br 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: flip-in-diag-2-br 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-.flip-out-diag-2-tl {
-  -webkit-animation: flip-out-diag-2-tl 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-  animation: flip-out-diag-2-tl 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
-
-@-webkit-keyframes flip-in-diag-2-br {
-  0% {
-      -webkit-transform: rotate3d(-1, 1, 0, -80deg);
-      transform: rotate3d(-1, 1, 0, -80deg);
-      opacity: 0;
-  }
-
-  100% {
-      -webkit-transform: rotate3d(1, 1, 0, 0deg);
-      transform: rotate3d(1, 1, 0, 0deg);
-      opacity: 1;
-  }
-}
-
-@keyframes flip-in-diag-2-br {
-  0% {
-      -webkit-transform: rotate3d(-1, 1, 0, -80deg);
-      transform: rotate3d(-1, 1, 0, -80deg);
-      opacity: 0;
-  }
-
-  100% {
-      -webkit-transform: rotate3d(1, 1, 0, 0deg);
-      transform: rotate3d(1, 1, 0, 0deg);
-      opacity: 1;
-  }
-}
-
-@-webkit-keyframes flip-out-diag-2-tl {
-  0% {
-      -webkit-transform: rotate3d(1, 1, 0, 0deg);
-      transform: rotate3d(1, 1, 0, 0deg);
-      opacity: 1;
-  }
-
-  100% {
-      -webkit-transform: rotate3d(-1, 1, 0, -70deg);
-      transform: rotate3d(-1, 1, 0, -70deg);
-      opacity: 0;
-  }
-}
-
-@keyframes flip-out-diag-2-tl {
-  0% {
-      -webkit-transform: rotate3d(1, 1, 0, 0deg);
-      transform: rotate3d(1, 1, 0, 0deg);
-      opacity: 1;
-  }
-
-  100% {
-      -webkit-transform: rotate3d(-1, 1, 0, -70deg);
-      transform: rotate3d(-1, 1, 0, -70deg);
-      opacity: 0;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Sohoje is your ultimate shopping companion, offering a seamless and personalized online marketplace experience. With a user-friendly interface, Sohoje brings a wide variety of products from local and international sellers right to your fingertips. Whether you're looking for the latest fashion, gadgets, home essentials, or unique finds, Sohoje has it all. Enjoy fast and secure payments, exclusive deals, and reliable delivery right to your doorstep. Shop smart, shop fast, shop Sohoje—where convenience meets quality."
+    />
+    <meta
+      name="keywords"
+      content="Sohoje, shopping app, online shopping, buy online, e-commerce, mobile shopping, fashion, gadgets, home essentials, online marketplace, secure payments, fast delivery, online store, best deals, shopping made easy, local shopping, global shopping, digital marketplace"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.plasticfreejuly.org/wp-content/uploads/2019/05/Plastic-Free-July_Cotton-bag-1-e1687772148771.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="1000x780"
+      href="https://www.plasticfreejuly.org/wp-content/uploads/2019/05/Plastic-Free-July_Cotton-bag-1-e1687772148771.png"
+    />
+    <meta name="og:title" content="Sohoje | The indian shoping site" />
+    <meta name="googlebot" content="index,follow" />
+    <meta property="og:image" content="assets/images/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="780" />
+    <meta
+      property="og:image"
+      content="https://www.plasticfreejuly.org/wp-content/uploads/2019/05/Plastic-Free-July_Cotton-bag-1-e1687772148771.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="robots"
+      content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+    />
+    <link rel="canonical" href="https://sohoje.in" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Sohoje &mdash; The indian shoping site"
+    />
+    <meta property="og:url" content="https://sohoje.in" />
+    <meta property="og:site_name" content="Sohoje" />
+    <meta property="og:updated_time" content="2024-06-14T17:00:00+00:00" />
+    <meta
+      property="article:published_time"
+      content="2024-01-24T12:41:38+00:00"
+    />
+    <meta
+      property="article:modified_time"
+      content="2024-06-14T17:00:00+00:00"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sohoje &mdash; The indian shoping site"
+    />
+    <meta
+      name="twitter:description"
+      content="Sohoje is your ultimate shopping companion, offering a seamless and personalized online marketplace experience. With a user-friendly interface, Sohoje brings a wide variety of products from local and international sellers right to your fingertips."
+    />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="admin" />
+    <meta name="twitter:label2" content="Time to read" />
+    <meta name="twitter:data2" content="4 minutes" />
+
+    <title>সহজে - ভারতের বাজার সাইট</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- custom -->
+    <link rel="stylesheet" href="css/Style.css" />
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Signika:400,300,600,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Chewy"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "shoping",
+  "name": "sohoje the indian shoping site",
+  "description": "Sohoje is your ultimate shopping companion, offering a seamless and personalized online marketplace experience. ",
+  "thumbnailUrl": "https://www.plasticfreejuly.org/wp-content/uploads/2019/05/Plastic-Free-July_Cotton-bag-1-e1687772148771.png",
+  "uploadDate": "2025-03-18",
+  "contentUrl": "https://sohoje.in/"
+}
+</script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XYMGGND1CY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-XYMGGND1CY");
+    </script>
+  </head>
+  <body id="home" data-spy="scroll" data-target=".navbar-collapse">
+    <!-- Add this to your HTML -->
+    <div id="copyNotification" style="display: none">link copied!</div>
+
+	     <!-- 
+    - #NO INTERNET
+  --> 
+
+  <div id="connection-checker-full-screen">
+    <div class="middle-center">
+        <span><img src="https://cdn.dribbble.com/users/1375592/screenshots/5928783/no_internet.gif" alt=""></span>
+    </div>
+</div>
+
+	  	     <!-- 
+    - #NO INTERNET
+  -->
+	  
+    <div class="notice-popup" id="popup">
+      <div class="notice-content">
+          <span class="close-btn" id="closeBtn">&times;</span>
+          <h3 style="color: black;">গুরুত্বপূর্ণ বার্তা</h3>
+          <p>Sohoje.in - আপনার দৈনন্দিন জীবনকে সহজ করার একমাত্র প্ল্যাটফর্ম! 🛒 তাজা শাকসবজি, ফল, মাছ-মাংস থেকে শুরু করে প্রয়োজনীয় গৃহস্থালি পণ্য অর্ডার করুন, 🔧 বাড়ির যেকোনো সমস্যার জন্য অভিজ্ঞ মিস্ত্রি ডাকুন, 🌍 আর বিশ্বের যেকোনো প্রান্ত থেকে দুর্লভ জিনিস আনুন - সবই এখন আপনার হাতের মুঠোয়, সহজে এবং দ্রুত</p>
+      </div>
+  </div>
+    <!-- flow 
+    <div class="flow">
+      <ul>
+	 <li class="flow-child">
+          <a href="#" target="_parent" title="Youtube"><i class="fa fa-youtube"></i></a>
+        </li>
+	      
+        <li class="flow-child">
+          <a
+            href="https://www.facebook.com/sohoje.in"
+            target="_parent"
+            title="Facebook"
+            ><i class="fa fa-facebook"></i
+          ></a>
+        </li>
+        <li class="flow-child">
+          <a href="#" target="_parent" title="Whatsapp"
+            ><i class="fa fa-whatsapp"></i
+          ></a>
+        </li>
+        <li class="flow-child">
+          <a
+            href="#"
+            target="_parent"
+            title="sohoje promo code"
+            ><i class="fa fa-gift"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  flow -->
+    <!-- start navigation -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+          >
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand smoothScroll"
+            ><strong
+              ><img src="images/logo/logo.png" alt=""
+            /></strong>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="smoothScroll">হোম</a></li>
+		  <li>
+              <a
+                href=""  target="_parent"
+                class="smoothScroll" id="add-to-home-screen-btn"
+                >অ্যাপ</a
+              >
+            </li>
+            <li>
+              <a href="#" class="smoothScroll"  target="_parent"
+                >যোগাযোগ</a
+              >
+            </li>
+            <li>
+              <a
+                href="policy/New Text Document.txt"  target="_parent"
+                class="smoothScroll"
+                >পলিসি</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"  target="_parent"
+                class="smoothScroll"
+                >অন্যান্য</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end navigation -->
+
+    <!-- start flexslider -->
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="images/bg1.png" alt="sojoje" />
+          <!-- <div class="flex-caption">
+					<h2 class="slider-title">Freshly Baked Pizza</h2>
+					<h3 class="slider-subtitle">Premium Quality, Finest Ingredients</h3>
+					<p class="slider-description">Donec id euismod magna. Ut erat ligula, malesuada eu quam a, fringilla auctor augue. Praesent tincidunt neque semper elementum gravida.</p>
+				</div> -->
+        </li>
+        <li>
+          <img src="images/bg2.png" alt="sojoje" />
+          <!-- <div class="flex-caption">
+					<h2 class="slider-title">We make Pizza</h2>
+					<h3 class="slider-subtitle">Fresh, clean, and delicious.</h3>
+					<p class="slider-description">Praesent tincidunt neque semper elementum gravida. Donec id euismod magna. Ut erat ligula, malesuada eu quam a, fringilla auctor augue.</p>
+				</div> -->
+        </li>
+
+       <li>
+          <img src="images/bg3.png" alt="sojoje" />
+          <!-- <div class="flex-caption">
+					<h2 class="slider-title">Freshly Baked Pizza</h2>
+					<h3 class="slider-subtitle">Premium Quality, Finest Ingredients</h3>
+					<p class="slider-description">Donec id euismod magna. Ut erat ligula, malesuada eu quam a, fringilla auctor augue. Praesent tincidunt neque semper elementum gravida.</p>
+				</div>  -->
+        </li>
+        <li>
+          <img src="images/bg4.png" alt="sojoje" />
+          <!-- <div class="flex-caption">
+					<h2 class="slider-title">Freshly Baked Pizza</h2>
+					<h3 class="slider-subtitle">Premium Quality, Finest Ingredients</h3>
+					<p class="slider-description">Donec id euismod magna. Ut erat ligula, malesuada eu quam a, fringilla auctor augue. Praesent tincidunt neque semper elementum gravida.</p>
+				</div>  -->
+        </li>  
+
+	              <li>
+          <img src="images/bg5.png" alt="sojoje" />
+          <!-- <div class="flex-caption">
+					<h2 class="slider-title">Freshly Baked Pizza</h2>
+					<h3 class="slider-subtitle">Premium Quality, Finest Ingredients</h3>
+					<p class="slider-description">Donec id euismod magna. Ut erat ligula, malesuada eu quam a, fringilla auctor augue. Praesent tincidunt neque semper elementum gravida.</p>
+				</div>  -->
+        </li> 
+
+
+      </ul>
+    </div>
+    <!-- end flexslider -->
+
+    <h1 class="VideoTittle" id="top_tittle-at">
+      <span>এখনি সহজে বাড়ির বাজার করুন পাইকারি দামে। কোনো সার্চের ঝামেলা ছাড়াই, যা চাই লিখে দিন, আমরা তা আপনার বাড়িতে পৌঁছে দেব একদম ফ্রি হোম ডেলিভারিতে!</span>
+    </h1>
+
+    
+<!--- #SERVICES -->
+
+<div class="order" id="Order">
+
+  <div class="container">
+      <form action="https://formsubmit.co/add95ccf58ebc4dc7d471e9310090d98" method="post" class="order-form" enctype="multipart/form-data">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://sohoje.github.io/bajar/thank/index.html">
+
+          <div class="input-wrapper">
+            <label for="Product" class="input-label">আপনার বাজার দ্রব্যগুলি লিখুন পরিমান সহ</label>
+            <textarea name="Product" id="Product1" placeholder="এখানে লিখুন কি কি বাজার চান আপনি, যেমন : রুই মাছ - ১ কেজি ; ডিম - ১২ টা ; চাল - ২ কেজি ..." class="input-field_big"></textarea>
+            <label for="or" class="input-label">অথবা এখানে ফর্দ আপলোড করুন</label>
+            <input type="file" name="attachment" accept="image/png, image/jpeg" id="Product2" placeholder="" class="input-field"></textarea>
+          </div>
+          
+          <div class="input-wrapper">
+              <label for="District" class="input-label">জেলা বাছুন*</label>
+              <select class="input-label2" name="District" id="District" required>
+                  <option value="chose">জেলা বেছে নিন</option>
+                  <option value="N_24_PGS">উত্তর ২৪ পরগনা</option>
+                  <option value="S_24_PGS">দক্ষিন ২৪ পরগনা</option>
+                  <option value="Nadia">নদিয়া</option>
+              </select>
+          </div>
+
+          <div class="input-wrapper">
+              <label for="Area" class="input-label">আপনার শহর বাছুন*</label>
+              <select class="input-label2" name="Block" id="Block" required>
+              </select>
+          </div>
+
+          <div class="input-wrapper">
+              <label for="Mobile number" class="input-label">মোবাইল নাম্বার লিখুন*</label>
+
+              <input type="tel" name="Mobile Number" id="Number" placeholder=""
+                  class="input-field" pattern="[1-9]{1}[0-9]{9}" required>
+          </div>
+
+          <div class="input-wrapper">
+              <label for="Address" class="input-label">সম্পূর্ণ নাম ও ঠিকানা লিখুন*</label>
+
+              <input type="text" name="Full Address" id="Address" required placeholder=""
+                  class="input-field">
+          </div>
+
+
+          <!--div class="input-wrapper">
+    <label for="Minimum budget" class="input-label">Set Budget</label>
+
+    <input type="number" name="Minimum budget" id="Number"  placeholder="Your Budget" class="input-field" pattern="[1-9]{1}[0-9]{9}">
+  </div>
+
+ 
+
+  <div class="input-wrapper">
+    <label for="Service Date" class="input-label">Service Date**</label>
+
+    <input type="date" name="Service Date" id="ServiceDate" required class="input-field">
+  </div>
+
+  <div class="input-wrapper">
+    <label for="Service Time" class="input-label">Service Time</label>
+
+    <input type="time" name="Service Time" id="ServiceTime"  class="input-field">
+  </div-->
+          <div class="input-wrapper">
+              <label for="Promo code" class="input-label promoFlex">প্রমো কোড (যদি থাকে)
+                  <a href="https://youtu.be/niUJhOl-CUs" class="promoGo">
+                      <ion-icon name="open-outline"></ion-icon>
+                  </a>
+              </label>
+
+              <input type="text" name="Promo code" id="Promocode" class="input-field"
+                  placeholder="">
+          </div>
+
+
+          <button type="submit" class="btn btn-secondary">অর্ডার করুন</button>
+      </form>
+      <p style="color: aliceblue; text-align: center; margin: 20px;"> আপনার অর্ডার করার পর আমরা আপনার সাথে দ্রুত যোগাযোগ করব।
+      </p>
+  </div>
+</div>
+</section>
+
+ <!--- #SERVICES -->
+
+    <!-- start footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p id="clickDiv">
+              বাড়ির নিত্য প্রয়োজনীয় বাজার করুন এখন একদম সহজে। শুধুমাত্র লিখে দিন আপনার কি কি প্রয়োজন আমরা আপনার বাজার করে পাঠিয়ে দেব আপনার বাড়ির দুয়ারে। <br><br>
+              Copyright &copy; 2025 Sohoje Company. All rights reserved.
+            </p>
+            <hr />
+            <ul class="social-icon">
+              <li>
+                <a
+                  href="#"  target="_parent"
+                  class="fa fa-youtube"
+                  title="youTube"
+	          alt="Sohoje youtube page"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/sohoje.in"  target="_parent"
+                  class="fa fa-facebook"
+                  title="Facebook"
+	          alt="Sohoje facebook page"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"  target="_parent"
+                  class="fa fa-whatsapp"
+                  title="Whatsapp"
+	          alt="Sohoje whatsapp customer service"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"  target="_parent"
+                  class="fa fa-gift"
+                  title="sohoje"
+	          alt="Sohoje gift promo code"
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="hdn" style="display: none">
+        <img
+          src="https://www.free-website-hit-counter.com/c.php?d=9&id=6405&s=10"
+          border="0"
+          alt="sohoje page view"
+        /><br /><small></small>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
