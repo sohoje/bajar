@@ -559,7 +559,7 @@ html[xmlns] .slides {
 
 .VideoTittle span {
   display: inline-block;
-  animation: slideRightToLeft 25s linear infinite;
+  animation: slideRightToLeft 35s linear infinite;
 }
 
 @keyframes slideRightToLeft {
