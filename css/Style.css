@@ -1006,6 +1006,7 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
 
 /* General container styling */
 .service-info {
+  display: none;
   background-color: #f0f8ff;
   padding: 20px;
   border-radius: 10px;
