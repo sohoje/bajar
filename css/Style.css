@@ -998,84 +998,7 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
     color: red;
     margin-left: 5px;
   }
-
-  /*-----------------------------------*\
- * #Amader somporke
-\*-----------------------------------*/
-
-
-/* General container styling */
-.service-info {
-  display: none;
-  background-color: #f0f8ff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Header Styling */
-.service-info h2 {
-  color: #2980b9;
-  font-size: 22px;
-  margin-top: 20px;
-  border-bottom: 2px solid #2980b9;
-  padding-bottom: 5px;
-  font-weight: bold;
-}
-
-/* Style for List (Bullets) */
-.service-info ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.service-info ul li {
-  font-size: 16px;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  position: relative;
-  color: #555;
-}
-
-/* Custom Green Circle Bullet */
-.service-info ul li::before {
-  content: '🟢';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-}
-
-/* Style for numbered sections (2️⃣, 3️⃣) */
-.service-info .service-number {
-  font-size: 24px;
-  color: #e67e22;
-  margin-right: 10px;
-}
-
-/* Emphasizing important text (for bold sections like prices, important points) */
-.service-info .important-text {
-  color: #27ae60;
-  font-weight: bold;
-}
-
-/* Adding spacing between paragraphs */
-.service-info p {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-/* Highlighting certain terms (for example, charges) */
-.service-info .highlight {
-  color: #e74c3c;
-  font-weight: bold;
-}
-
+  
   /*-----------------------------------*\
  * #Notice
 \*-----------------------------------*/
@@ -1223,15 +1146,3 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
       opacity: 0;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
