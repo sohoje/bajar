@@ -1043,6 +1043,22 @@ IPHONE 4-4S-5 PORTRAIT (320x568)
     color: red;
 }
 
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00ffcc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #009174;
+}
+
 /*-----------------------------------*\
  * #NO INTERNET
 \*-----------------------------------*/
