@@ -141,11 +141,11 @@ if (!clickDiv || !hiddenDiv) {
 
 //******************************************** Notice ********************************* */
 
-        // Show the popup after 2 seconds
+        // Show the popup after 10 seconds
         window.onload = function() {
           setTimeout(function() {
               document.getElementById('popup').classList.add('active');
-          }, 2000); // 2000 milliseconds = 2 seconds
+          }, 10000); // 10000 milliseconds = 10 seconds
       };
 
       // Close the popup when the close button is clicked
