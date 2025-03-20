@@ -250,8 +250,8 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.position = 'fixed';
         popup.style.top = '0';
         popup.style.left = '0';
-        popup.style.width = '50%';
-        popup.style.height = '50%';
+        popup.style.width = '100%';
+        popup.style.height = '100%';
         popup.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
         popup.style.color = 'white';
         popup.style.textAlign = 'center';
