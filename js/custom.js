@@ -265,14 +265,14 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.appendChild(message);
 
         const countdownText = document.createElement('p');
-        countdownText.innerHTML = 'বাকি: <span id="countdown">20</span> সেকেন্ড';
+        countdownText.innerHTML = 'বাকি: <span id="countdown">15</span> সেকেন্ড';
         popup.appendChild(countdownText);
 
         // পপ-আপ DOM এ অ্যাড করা
         document.body.appendChild(popup);
 
         // কাউন্টডাউন শুরু করা
-        let countdown = 20;
+        let countdown = 15;
         const countdownElement = document.getElementById('countdown');
 
         const countdownInterval = setInterval(function() {
