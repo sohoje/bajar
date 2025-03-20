@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // ফর্মের ডিফল্ট সাবমিট প্রতিরোধ করা
+        //event.preventDefault(); // ফর্মের ডিফল্ট সাবমিট প্রতিরোধ করা
 
         // পপ-আপ তৈরি করা
         const popup = document.createElement('div');
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
         message.style.marginBottom = '20px'; // সেন্টার করার জন্য কিছু মার্জিন
 
         const countdownText = document.createElement('p');
-        countdownText.innerHTML = 'বাকি: <span id="countdown">15</span> সেকেন্ড 😊';
+        countdownText.innerHTML = 'বাকি: <span id="countdown">21</span> সেকেন্ড 😊';
         countdownText.style.marginTop = '10px'; // কিছু মার্জিন
 
         popup.appendChild(message);
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(popup);
 
         // কাউন্টডাউন শুরু করা
-        let countdown = 15;
+        let countdown = 20;
         const countdownElement = document.getElementById('countdown');
 
         const countdownInterval = setInterval(function() {
@@ -292,11 +292,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 1000);
 
-        // এখানে ফর্মের আসল সাবমিট কার্যক্রম হবে
-        setTimeout(function() {
-            form.submit(); // ফর্ম সাবমিট করা
-        }, 100); // ১০০ মিলিসেকেন্ডের বিলম্ব দিয়ে ফর্ম সাবমিট
-    });
 });
 
 // //share button
