@@ -239,59 +239,53 @@ document.getElementById('share_apk').addEventListener('click', function() {
 //******************************************** form submit popup ********************************* */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ফর্ম সাবমিট করা হলে এই ফাংশনটি কাজ করবে
-    const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
+    const form = document.querySelector('form');
 
     form.addEventListener('submit', function(event) {
-        //event.preventDefault(); // ফর্মের ডিফল্ট সাবমিট প্রতিরোধ করা
-
-        // পপ-আপ তৈরি করা
+        event.preventDefault(); // ডিফল্ট সাবমিট বন্ধ করা
+        
+        // পপ-আপ দেখানো
         const popup = document.createElement('div');
-        popup.style.position = 'fixed';
-        popup.style.top = '0';
-        popup.style.left = '0';
-        popup.style.width = '100%';
-        popup.style.height = '100%';
-        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-        popup.style.color = 'white';
-        popup.style.display = 'flex';
-        popup.style.flexDirection = 'column';
-        popup.style.justifyContent = 'center';
-        popup.style.alignItems = 'center';
-        popup.style.textAlign = 'center';
-        popup.style.fontSize = '24px';
-        popup.style.padding = '20px';
-        popup.id = 'popup';
-
-        // পপ-আপের কন্টেন্ট
-        const message = document.createElement('p');
-        message.innerText = 'অর্ডার প্রসেস চলছে...';
-        message.style.marginBottom = '20px'; // সেন্টার করার জন্য কিছু মার্জিন
-
-        const countdownText = document.createElement('p');
-        countdownText.innerHTML = 'বাকি: <span id="countdown">21</span> সেকেন্ড 😊';
-        countdownText.style.marginTop = '10px'; // কিছু মার্জিন
-
-        popup.appendChild(message);
-        popup.appendChild(countdownText);
-
-        // পপ-আপ DOM এ অ্যাড করা
+        popup.innerHTML = `
+            <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); color:white; 
+                        display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+                        font-size:24px; padding:20px; z-index:9999;">
+                <p style="margin-bottom:20px;">অর্ডার প্রসেস চলছে...</p>
+                <p style="margin-top:10px;">বাকি: <span id="countdown">20</span> সেকেন্ড 😊</p>
+            </div>
+        `;
         document.body.appendChild(popup);
 
-        // কাউন্টডাউন শুরু করা
-        let countdown = 20;
-        const countdownElement = document.getElementById('countdown');
+        // সমান্তরালে ২টি কাজ: ১. ফর্ম সাবমিট, ২. কাউন্টডাউন
+        const formSubmitPromise = fetch(form.action, { // formsubmit-এর এন্ডপয়েন্ট
+            method: form.method,
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
 
-        const countdownInterval = setInterval(function() {
-            countdown--;
-            countdownElement.innerText = countdown;
+        const countdownPromise = new Promise((resolve) => {
+            let countdown = 20;
+            const countdownElement = document.getElementById('countdown');
+            
+            const interval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+                if(countdown <= 0) {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, 1000);
+        });
 
-            if (countdown <= 0) {
-                clearInterval(countdownInterval); // কাউন্টডাউন বন্ধ করা
-                window.location.href = "https://sohoje.github.io/bajar/thank/index.html"; // নতুন লিংক লোড করা
-            }
-        }, 1000);
-
+        // যেকোনো একটি শেষ হলে রিডাইরেক্ট
+        Promise.race([formSubmitPromise, countdownPromise])
+            .then(() => {
+                window.location.href = "https://sohoje.github.io/bajar/thank/index.html";
+            })
+            .catch(error => {
+                console.error('ত্রুটি:', error);
+            });
+    });
 });
 
 // //share button
