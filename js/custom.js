@@ -237,54 +237,62 @@ document.getElementById('share_apk').addEventListener('click', function() {
     typePlaceholder();
 
 //******************************************** form submit popup ********************************* */
-
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
+    const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // ডিফল্ট সাবমিট বন্ধ করা
-        
-        // পপ-আপ দেখানো
+        event.preventDefault(); // ফর্মের ডিফল্ট সাবমিট প্রতিরোধ করা
+
+        // পপ-আপ তৈরি করা
         const popup = document.createElement('div');
-        popup.innerHTML = `
-            <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); color:white; 
-                        display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
-                        font-size:24px; padding:20px; z-index:9999;">
-                <p style="margin-bottom:20px;">অর্ডার প্রসেস চলছে...</p>
-                <p style="margin-top:10px;">বাকি: <span id="countdown">20</span> সেকেন্ড 😊</p>
-            </div>
-        `;
+        popup.style.position = 'fixed';
+        popup.style.top = '0';
+        popup.style.left = '0';
+        popup.style.width = '100%';
+        popup.style.height = '100%';
+        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        popup.style.color = 'white';
+        popup.style.display = 'flex'; // ফ্লেক্সবক্স ব্যবহার করে সেন্টার করা
+        popup.style.justifyContent = 'center'; // হরাইজন্টাল সেন্টার
+        popup.style.alignItems = 'center'; // ভার্টিকাল সেন্টার
+        popup.style.textAlign = 'center';
+        popup.style.fontSize = '24px';
+        popup.style.zIndex = '9999'; // সবকিছুর উপরে দেখানোর জন্য
+        popup.id = 'popup';
+
+        // পপ-আপের কন্টেন্ট
+        const message = document.createElement('p');
+        message.innerText = 'অর্ডার প্রসেস চলছে 😍';
+        message.style.marginBottom = '20px'; // কিছু মার্জিন
+
+        const countdownText = document.createElement('p');
+        countdownText.innerHTML = 'বাকি: <span id="countdown">21</span> সেকেন্ড';
+        countdownText.style.marginTop = '10px'; // কিছু মার্জিন
+
+        popup.appendChild(message);
+        popup.appendChild(countdownText);
+
+        // পপ-আপ DOM এ অ্যাড করা
         document.body.appendChild(popup);
 
-        // সমান্তরালে ২টি কাজ: ১. ফর্ম সাবমিট, ২. কাউন্টডাউন
-        const formSubmitPromise = fetch(form.action, { // formsubmit-এর এন্ডপয়েন্ট
-            method: form.method,
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        });
+        // কাউন্টডাউন শুরু করা
+        let countdown = 20;
+        const countdownElement = document.getElementById('countdown');
 
-        const countdownPromise = new Promise((resolve) => {
-            let countdown = 20;
-            const countdownElement = document.getElementById('countdown');
-            
-            const interval = setInterval(() => {
-                countdown--;
-                countdownElement.textContent = countdown;
-                if(countdown <= 0) {
-                    clearInterval(interval);
-                    resolve();
-                }
-            }, 1000);
-        });
+        const countdownInterval = setInterval(function() {
+            countdown--;
+            countdownElement.innerText = countdown;
 
-        // যেকোনো একটি শেষ হলে রিডাইরেক্ট
-        Promise.race([formSubmitPromise, countdownPromise])
-            .then(() => {
-                window.location.href = "https://sohoje.github.io/bajar/thank/index.html";
-            })
-            .catch(error => {
-                console.error('ত্রুটি:', error);
-            });
+            if (countdown <= 0) {
+                clearInterval(countdownInterval); // কাউন্টডাউন বন্ধ করা
+                window.location.href = "https://sohoje.github.io/bajar/thank/index.html"; // নতুন লিংক লোড করা
+            }
+        }, 1000);
+
+        // ফর্ম সাবমিট করা (১০০ মিলিসেকেন্ডের বিলম্ব দিয়ে)
+        setTimeout(function() {
+            form.submit(); // ফর্ম সাবমিট করা
+        }, 100);
     });
 });
 
