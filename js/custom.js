@@ -236,6 +236,63 @@ document.getElementById('share_apk').addEventListener('click', function() {
     // Start the typing effect when the page loads
     typePlaceholder();
 
+//******************************************** form submit popup ********************************* */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ফর্ম সাবমিট করা হলে এই ফাংশনটি কাজ করবে
+    const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // ফর্মের ডিফল্ট সাবমিট প্রতিরোধ করা
+
+        // পপ-আপ তৈরি করা
+        const popup = document.createElement('div');
+        popup.style.position = 'fixed';
+        popup.style.top = '0';
+        popup.style.left = '0';
+        popup.style.width = '100%';
+        popup.style.height = '100%';
+        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        popup.style.color = 'white';
+        popup.style.textAlign = 'center';
+        popup.style.fontSize = '24px';
+        popup.style.paddingTop = '20%';
+        popup.id = 'popup';
+
+        // পপ-আপের কন্টেন্ট
+        const message = document.createElement('p');
+        message.innerText = 'প্রসেস চলছে...';
+        popup.appendChild(message);
+
+        const countdownText = document.createElement('p');
+        countdownText.innerHTML = 'কাউন্টডাউন: <span id="countdown">10</span> সেকেন্ড';
+        popup.appendChild(countdownText);
+
+        // পপ-আপ DOM এ অ্যাড করা
+        document.body.appendChild(popup);
+
+        // কাউন্টডাউন শুরু করা
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+
+        const countdownInterval = setInterval(function() {
+            countdown--;
+            countdownElement.innerText = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(countdownInterval); // কাউন্টডাউন বন্ধ করা
+                window.location.href = "https://sohoje.github.io/bajar/thank/index.html"; // নতুন লিংক লোড করা
+            }
+        }, 1000);
+
+        // এখানে ফর্মের আসল সাবমিট কার্যক্রম হবে
+        setTimeout(function() {
+            form.submit(); // ফর্ম সাবমিট করা
+        }, 100); // ১০০ মিলিসেকেন্ডের বিলম্ব দিয়ে ফর্ম সাবমিট
+    });
+});
+
+
 
 // //share button
 
