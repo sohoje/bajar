@@ -250,9 +250,9 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.position = 'fixed';
         popup.style.top = '0';
         popup.style.left = '0';
-        popup.style.width = '100%';
-        popup.style.height = '100%';
-        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        popup.style.width = '50%';
+        popup.style.height = '50%';
+        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
         popup.style.color = 'white';
         popup.style.textAlign = 'center';
         popup.style.fontSize = '24px';
@@ -261,18 +261,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // পপ-আপের কন্টেন্ট
         const message = document.createElement('p');
-        message.innerText = 'প্রসেস চলছে...';
+        message.innerText = 'অর্ডার প্রসেস চলছে...';
         popup.appendChild(message);
 
         const countdownText = document.createElement('p');
-        countdownText.innerHTML = 'কাউন্টডাউন: <span id="countdown">10</span> সেকেন্ড';
+        countdownText.innerHTML = 'বাকি: <span id="countdown">20</span> সেকেন্ড';
         popup.appendChild(countdownText);
 
         // পপ-আপ DOM এ অ্যাড করা
         document.body.appendChild(popup);
 
         // কাউন্টডাউন শুরু করা
-        let countdown = 10;
+        let countdown = 20;
         const countdownElement = document.getElementById('countdown');
 
         const countdownInterval = setInterval(function() {
