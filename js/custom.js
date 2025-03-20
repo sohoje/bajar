@@ -254,18 +254,25 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.height = '100%';
         popup.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
         popup.style.color = 'white';
+        popup.style.display = 'flex';
+        popup.style.flexDirection = 'column';
+        popup.style.justifyContent = 'center';
+        popup.style.alignItems = 'center';
         popup.style.textAlign = 'center';
         popup.style.fontSize = '24px';
-        popup.style.paddingTop = '20%';
+        popup.style.padding = '20px';
         popup.id = 'popup';
 
         // পপ-আপের কন্টেন্ট
         const message = document.createElement('p');
         message.innerText = 'অর্ডার প্রসেস চলছে...';
-        popup.appendChild(message);
+        message.style.marginBottom = '20px'; // সেন্টার করার জন্য কিছু মার্জিন
 
         const countdownText = document.createElement('p');
-        countdownText.innerHTML = 'বাকি: <span id="countdown">15</span> সেকেন্ড';
+        countdownText.innerHTML = 'বাকি: <span id="countdown">15</span> সেকেন্ড 😊';
+        countdownText.style.marginTop = '10px'; // কিছু মার্জিন
+
+        popup.appendChild(message);
         popup.appendChild(countdownText);
 
         // পপ-আপ DOM এ অ্যাড করা
@@ -291,8 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100); // ১০০ মিলিসেকেন্ডের বিলম্ব দিয়ে ফর্ম সাবমিট
     });
 });
-
-
 
 // //share button
 
