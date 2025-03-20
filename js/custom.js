@@ -220,8 +220,21 @@ document.getElementById('share_apk').addEventListener('click', function() {
 });
 
 
-//******************************************** form validation ********************************* */
+//******************************************** Typing effect for the placeholder ********************************* */
+    const placeholderText = "এখানে লিখে দিন আপনার যা প্রয়োজন , যেমন: টমেটো ১ কেজি, চিকেন ৫০০ গ্রাম | অথবা জলের ট্যাংকি পরিষ্কার, বাথরুমের ট্যাপ লিক করছে, ফ্যান খারাপ হয়েছে | অথবা আইসল্যান্ডের লাভা রক, ইতালিয়ান হ্যান্ডমেড শু, বিরল বই, ইত্যাদি যা খুশি...";
+    const textarea = document.getElementById("Product1");
+    let index = 0;
 
+    function typePlaceholder() {
+      if (index < placeholderText.length) {
+        textarea.setAttribute("placeholder", placeholderText.substring(0, index + 1));
+        index++;
+        setTimeout(typePlaceholder, 50); // Adjust typing speed here (in milliseconds)
+      }
+    }
+
+    // Start the typing effect when the page loads
+    typePlaceholder();
 
 
 // //share button
