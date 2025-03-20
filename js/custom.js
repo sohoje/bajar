@@ -223,20 +223,6 @@ document.getElementById('share_apk').addEventListener('click', function() {
 //******************************************** form validation ********************************* */
 
 
-function validateForm() {
-      const productText = document.getElementById("Product1").value.trim();
-      const productFile = document.getElementById("Product2").files.length;
-
-      if (productText === "" && productFile === 0) {
-        alert("দয়া করে আপনি যা অর্ডার দিতে চান সেগুলো লিখে দিন অথবা একটি ছবি আপলোড করুন");
-        return false; // Prevent form submission
-      }
-      return true; // Allow form submission
-    }
-
-
-
-
 
 // //share button
 
