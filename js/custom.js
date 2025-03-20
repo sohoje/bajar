@@ -237,11 +237,12 @@ document.getElementById('share_apk').addEventListener('click', function() {
     typePlaceholder();
 
 //******************************************** form submit popup ********************************* */
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
 
     form.addEventListener('submit', function(event) {
-  
+        event.preventDefault(); // ডিফল্ট সাবমিশন বন্ধ করা
+
         // পপ-আপ তৈরি করা
         const popup = document.createElement('div');
         popup.style.position = 'fixed';
@@ -249,24 +250,25 @@ document.getElementById('share_apk').addEventListener('click', function() {
         popup.style.left = '0';
         popup.style.width = '100%';
         popup.style.height = '100%';
-        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
         popup.style.color = 'white';
-        popup.style.display = 'flex'; // ফ্লেক্সবক্স ব্যবহার করে সেন্টার করা
-        popup.style.justifyContent = 'center'; // হরাইজন্টাল সেন্টার
-        popup.style.alignItems = 'center'; // ভার্টিকাল সেন্টার
+        popup.style.display = 'flex'; // ফ্লেক্সবক্স ব্যবহার করা
+        popup.style.flexDirection = 'column'; // ভাটিক্যাল স্ট্যাক
+        popup.style.justifyContent = 'center'; // উভয়ভাবে সেন্টার করা
+        popup.style.alignItems = 'center'; 
         popup.style.textAlign = 'center';
         popup.style.fontSize = '24px';
-        popup.style.zIndex = '9999'; // সবকিছুর উপরে দেখানোর জন্য
+        popup.style.zIndex = '9'; 
         popup.id = 'popup';
 
         // পপ-আপের কন্টেন্ট
         const message = document.createElement('p');
         message.innerText = 'অর্ডার প্রসেস চলছে 😍';
-        message.style.marginBottom = '20px'; // কিছু মার্জিন
+        message.style.margin = '10px 0'; // ভার্টিক্যাল মার্জিন
 
         const countdownText = document.createElement('p');
         countdownText.innerHTML = 'বাকি: <span id="countdown">21</span> সেকেন্ড';
-        countdownText.style.marginTop = '10px'; // কিছু মার্জিন
+        countdownText.style.margin = '10px 0'; // ভার্টিক্যাল মার্জিন
 
         popup.appendChild(message);
         popup.appendChild(countdownText);
@@ -294,6 +296,7 @@ document.getElementById('share_apk').addEventListener('click', function() {
         }, 100);
     });
 });
+
 
 // //share button
 
