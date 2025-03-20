@@ -237,12 +237,11 @@ document.getElementById('share_apk').addEventListener('click', function() {
     typePlaceholder();
 
 //******************************************** form submit popup ********************************* */
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // ফর্মের ডিফল্ট সাবমিট প্রতিরোধ করা
-
+  
         // পপ-আপ তৈরি করা
         const popup = document.createElement('div');
         popup.style.position = 'fixed';
