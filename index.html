@@ -320,71 +320,81 @@
 <div class="order" id="Order">
 
   <div class="container">
-      <form action="https://formsubmit.co/add95ccf58ebc4dc7d471e9310090d98" method="post" class="order-form" enctype="multipart/form-data" onsubmit="return validateForm()">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://sohoje.github.io/bajar/thank/index.html">
+      <form action="https://formsubmit.co/add95ccf58ebc4dc7d471e9310090d98" method="post" class="order-form" enctype="multipart/form-data">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://sohoje.github.io/bajar/thank/index.html">
 
-        <div class="input-wrapper">
-          <label for="Product" class="input-label">আপনার প্রয়োজনীয় জিনিসগুলি নিচে লিখুন বিস্তারিত</label>
-          <textarea name="Product" id="Product1" placeholder="এখানে লিখে দিন আপনার যা প্রয়োজন , যেমন: টমেটো ১ কেজি, চিকেন ৫০০ গ্রাম | অথবা জলের ট্যাংকি পরিষ্কার, বাথরুমের ট্যাপ লিক করছে, ফ্যান খারাপ হয়েছে | অথবা আইসল্যান্ডের লাভা রক, ইতালিয়ান হ্যান্ডমেড শু, বিরল বই, ইত্যাদি যা খুশি..." class="input-field_big"></textarea>
-          <label for="or" class="input-label">অথবা এখানে বাজার ফর্দ বা প্রয়োজনের ছবি আপলোড করুন</label>
-          <input type="file" name="attachment" accept="image/png, image/jpeg" id="Product2" placeholder="" class="input-field">
-        </div>
+          <div class="input-wrapper">
+            <label for="Product" class="input-label">আপনার প্রয়োজনীয় জিনিসগুলি নিচে লিখুন বিস্তারিত</label>
+            <textarea name="Product" id="Product1" placeholder="এখানে লিখে দিন আপনার যা প্রয়োজন , যেমন: টমেটো ১ কেজি, চিকেন ৫০০ গ্রাম | অথবা জলের ট্যাংকি পরিষ্কার, বাথরুমের ট্যাপ লিক করছে, ফ্যান খারাপ হয়েছে | অথবা আইসল্যান্ডের লাভা রক, ইতালিয়ান হ্যান্ডমেড শু, বিরল বই, ইত্যাদি যা খুশি..." class="input-field_big"></textarea>
+            <label for="or" class="input-label">অথবা এখানে বাজার ফর্দ বা প্রয়োজনের ছবি আপলোড করুন</label>
+            <input type="file" name="attachment" accept="image/png, image/jpeg" id="Product2" placeholder="" class="input-field"></textarea>
+          </div>
+          
+          <div class="input-wrapper">
+              <label for="District" class="input-label">জেলা বাছুন*</label>
+              <select class="input-label2" name="District" id="District" required>
+                  <option value="chose">জেলা বেছে নিন</option>
+                  <option value="N_24_PGS">উত্তর ২৪ পরগনা</option>
+                  <option value="S_24_PGS">দক্ষিন ২৪ পরগনা</option>
+                  <option value="Nadia">নদিয়া</option>
+              </select>
+          </div>
 
-        <div class="input-wrapper">
-          <label for="District" class="input-label">জেলা বাছুন*</label>
-          <select class="input-label2" name="District" id="District" required>
-            <option value="chose">জেলা বেছে নিন</option>
-            <option value="N_24_PGS">উত্তর ২৪ পরগনা</option>
-            <option value="S_24_PGS">দক্ষিন ২৪ পরগনা</option>
-            <option value="Nadia">নদিয়া</option>
-          </select>
-        </div>
+          <div class="input-wrapper">
+              <label for="Area" class="input-label">আপনার শহর বাছুন*</label>
+              <select class="input-label2" name="Block" id="Block" required>
+              </select>
+          </div>
 
-        <div class="input-wrapper">
-          <label for="Area" class="input-label">আপনার শহর বাছুন*</label>
-          <select class="input-label2" name="Block" id="Block" required>
-          </select>
-        </div>
+          <div class="input-wrapper">
+              <label for="Mobile number" class="input-label">মোবাইল নাম্বার লিখুন*</label>
 
-        <div class="input-wrapper">
-          <label for="Mobile number" class="input-label">মোবাইল নাম্বার লিখুন*</label>
-          <input type="tel" name="Mobile Number" id="Number" placeholder="" class="input-field" pattern="[1-9]{1}[0-9]{9}" required>
-        </div>
+              <input type="tel" name="Mobile Number" id="Number" placeholder=""
+                  class="input-field" pattern="[1-9]{1}[0-9]{9}" required>
+          </div>
 
-        <div class="input-wrapper">
-          <label for="Address" class="input-label">সম্পূর্ণ নাম ও ঠিকানা লিখুন*</label>
-          <input type="text" name="Full Address" id="Address" required placeholder="" class="input-field">
-        </div>
+          <div class="input-wrapper">
+              <label for="Address" class="input-label">সম্পূর্ণ নাম ও ঠিকানা লিখুন*</label>
 
-        <!--
-        <div class="input-wrapper">
-          <label for="Minimum budget" class="input-label">Set Budget</label>
-          <input type="number" name="Minimum budget" id="Number" placeholder="Your Budget" class="input-field" pattern="[1-9]{1}[0-9]{9}">
-        </div>
+              <input type="text" name="Full Address" id="Address" required placeholder=""
+                  class="input-field">
+          </div>
 
-        <div class="input-wrapper">
-          <label for="Service Date" class="input-label">Service Date**</label>
-          <input type="date" name="Service Date" id="ServiceDate" required class="input-field">
-        </div>
 
-        <div class="input-wrapper">
-          <label for="Service Time" class="input-label">Service Time</label>
-          <input type="time" name="Service Time" id="ServiceTime" class="input-field">
-        </div>
-        -->
+          <!--div class="input-wrapper">
+    <label for="Minimum budget" class="input-label">Set Budget</label>
 
-        <div class="input-wrapper">
-          <label for="Promo code" class="input-label promoFlex">প্রমো কোড (যদি থাকে)
-            <a href="https://youtu.be/niUJhOl-CUs" class="promoGo">
-              <ion-icon name="open-outline"></ion-icon>
-            </a>
-          </label>
-          <input type="text" name="Promo code" id="Promocode" class="input-field" placeholder="">
-        </div>
+    <input type="number" name="Minimum budget" id="Number"  placeholder="Your Budget" class="input-field" pattern="[1-9]{1}[0-9]{9}">
+  </div>
 
-        <button type="submit" class="btn btn-secondary">অর্ডার করুন</button>
+ 
+
+  <div class="input-wrapper">
+    <label for="Service Date" class="input-label">Service Date**</label>
+
+    <input type="date" name="Service Date" id="ServiceDate" required class="input-field">
+  </div>
+
+  <div class="input-wrapper">
+    <label for="Service Time" class="input-label">Service Time</label>
+
+    <input type="time" name="Service Time" id="ServiceTime"  class="input-field">
+  </div-->
+          <div class="input-wrapper">
+              <label for="Promo code" class="input-label promoFlex">প্রমো কোড (যদি থাকে)
+                  <a href="https://youtu.be/niUJhOl-CUs" class="promoGo">
+                      <ion-icon name="open-outline"></ion-icon>
+                  </a>
+              </label>
+
+              <input type="text" name="Promo code" id="Promocode" class="input-field"
+                  placeholder="">
+          </div>
+
+
+          <button type="submit" class="btn btn-secondary">অর্ডার করুন</button>
       </form>
       <p style="color: aliceblue; text-align: center; margin: 20px;"> অর্ডার করার পর কিছুটা সময় দেবেন প্রসেস হতে(১০/২০ সেকন্ড) এরপর সাকসেস দেখাবে। এরপর আমাদের গ্রাহকসেবা প্রতিনিধি আপনার সাথে যোগাযোগ করে মূল্য ও বিস্তারিত জানাবেন। আপনি কনফার্ম করলেই ডেলিভারি প্রক্রিয়া শুরু হবে। সম্পূর্ণ ফ্রি হোম ডেলিভারি।
       </p>
