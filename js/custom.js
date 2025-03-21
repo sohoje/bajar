@@ -221,20 +221,34 @@ document.getElementById('share_apk').addEventListener('click', function() {
 
 
 //******************************************** Typing effect for the placeholder ********************************* */
-    const placeholderText = "এখানে লিখে দিন আপনার যা প্রয়োজন , যেমন: টমেটো ১ কেজি, চিকেন ৫০০ গ্রাম | অথবা জলের ট্যাংকি পরিষ্কার, বাথরুমের ট্যাপ লিক করছে, ফ্যান খারাপ হয়েছে | অথবা আইসল্যান্ডের লাভা রক, ইতালিয়ান হ্যান্ডমেড শু, বিরল বই, ইত্যাদি যা খুশি...";
-    const textarea = document.getElementById("Product1");
-    let index = 0;
+const placeholderTexts = [
+  "এখানে লিখে দিন আপনার যা প্রয়োজন , যেমন: টমেটো ১ কেজি, চিকেন ৫০০ গ্রাম | অথবা জলের ট্যাংকি পরিষ্কার, বাথরুমের ট্যাপ লিক করছে, ফ্যান খারাপ হয়েছে | অথবা আইসল্যান্ডের লাভা রক, ইতালিয়ান হ্যান্ডমেড শু, বিরল বই, ইত্যাদি যা খুশি...",
+  "আপনার প্রোডাক্ট বা সার্ভিসের বিস্তারিত লিখুন।",
+  "এখানে একটি নতুন আইডিয়া লিখুন যা আপনার ব্যবসাকে আরো এগিয়ে নিয়ে যাবে।",
+  "এটা একটি উদাহরণ টেক্সট, আপনি কিছু লিখতে পারেন এখানে।"
+];
+const textarea = document.getElementById("Product1");
+let currentTextIndex = 0;
+let currentCharIndex = 0;
 
-    function typePlaceholder() {
-      if (index < placeholderText.length) {
-        textarea.setAttribute("placeholder", placeholderText.substring(0, index + 1));
-        index++;
-        setTimeout(typePlaceholder, 50); // Adjust typing speed here (in milliseconds)
-      }
-    }
+function typePlaceholder() {
+  const currentText = placeholderTexts[currentTextIndex];
+  if (currentCharIndex < currentText.length) {
+    // Set the placeholder text by typing one character at a time
+    textarea.setAttribute("placeholder", currentText.substring(0, currentCharIndex + 1));
+    currentCharIndex++;
+    setTimeout(typePlaceholder, 50); // Adjust typing speed here (in milliseconds)
+  } else {
+    // Once a placeholder is fully typed, move to the next one
+    currentTextIndex = (currentTextIndex + 1) % placeholderTexts.length;
+    currentCharIndex = 0;
+    setTimeout(typePlaceholder, 500); // Pause before starting the next one
+  }
+}
 
-    // Start the typing effect when the page loads
-    typePlaceholder();
+// Start the typing effect when the page loads
+typePlaceholder();
+
 
 //******************************************** form submit popup ********************************* */
 document.addEventListener('DOMContentLoaded', function() {
