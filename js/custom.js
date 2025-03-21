@@ -270,6 +270,24 @@ function typePlaceholder() {
 // Start the typing effect when the page loads
 typePlaceholder();
 
+//******************************************** need fill one form input ********************************* */
+  document.getElementById('submitBtn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get the values from the input fields
+    var productText = document.getElementById('Product1').value.trim();
+    var productFile = document.getElementById('Product2').files.length;
+
+    // Check if at least one field is filled
+    if (productText === "" && productFile === 0) {
+      // If neither is filled, show an error message
+      alert("দয়া করে অথবা টেক্সট লিখুন অথবা ছবি আপলোড করুন।");
+    }
+
+    // If valid, you can continue with further action, no need for an else block
+    // document.getElementById('yourFormId').submit(); // Uncomment this if you want to submit the form
+  });
+
 
 //******************************************** form submit popup ********************************* */
 document.addEventListener('DOMContentLoaded', function() {
