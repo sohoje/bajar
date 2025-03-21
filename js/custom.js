@@ -270,76 +270,66 @@ function typePlaceholder() {
 // Start the typing effect when the page loads
 typePlaceholder();
 
-document.getElementById('submitBtn').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get the values from the input fields
-    var productText = document.getElementById('Product1').value.trim();
-    var productFile = document.getElementById('Product2').files.length;
-
-    // Check if at least one field is filled
-    if (productText === "" && productFile === 0) {
-        // If neither is filled, show an error message
-        alert("দয়া করে অথবা টেক্সট লিখুন অথবা ছবি আপলোড করুন।");
-        return; // Don't proceed further if the fields are empty
-    }
-
-    // Proceed to show the popup and handle countdown
-    const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
-
-    // পপ-আপ তৈরি করা
-    const popup = document.createElement('div');
-    popup.style.position = 'fixed';
-    popup.style.top = '0';
-    popup.style.left = '0';
-    popup.style.width = '100%';
-    popup.style.height = '100%';
-    popup.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    popup.style.color = 'white';
-    popup.style.display = 'flex'; // ফ্লেক্সবক্স ব্যবহার করা
-    popup.style.flexDirection = 'column'; // ভাটিক্যাল স্ট্যাক
-    popup.style.justifyContent = 'center'; // উভয়ভাবে সেন্টার করা
-    popup.style.alignItems = 'center'; 
-    popup.style.textAlign = 'center';
-    popup.style.fontSize = '24px';
-    popup.style.zIndex = '9'; 
-    popup.id = 'popup';
-
-    // পপ-আপের কন্টেন্ট
-    const message = document.createElement('p');
-    message.innerText = 'অর্ডার প্রসেস চলছে 😍';
-    message.style.margin = '10px 0'; // ভার্টিক্যাল মার্জিন
-
-    const countdownText = document.createElement('p');
-    countdownText.innerHTML = 'বাকি: <span id="countdown">21</span> সেকেন্ড';
-    countdownText.style.margin = '10px 0'; // ভার্টিক্যাল মার্জিন
-
-    popup.appendChild(message);
-    popup.appendChild(countdownText);
-
-    // পপ-আপ DOM এ অ্যাড করা
-    document.body.appendChild(popup);
-
-    // কাউন্টডাউন শুরু করা
-    let countdown = 20;
-    const countdownElement = document.getElementById('countdown');
-
-    const countdownInterval = setInterval(function() {
-        countdown--;
-        countdownElement.innerText = countdown;
-
-        if (countdown <= 0) {
-            clearInterval(countdownInterval); // কাউন্টডাউন বন্ধ করা
-            window.location.href = "https://sohoje.github.io/bajar/thank/index.html"; // নতুন লিংক লোড করা
-        }
-    }, 1000);
-
-    // ফর্ম সাবমিট করা (১০০ মিলিসেকেন্ডের বিলম্ব দিয়ে)
-    setTimeout(function() {
-        form.submit(); // ফর্ম সাবমিট করা
-    }, 100);
-});
-
+//******************************************** form submit popup ********************************* */
+ document.addEventListener('DOMContentLoaded', function() {
+     const form = document.querySelector('form'); // ফর্ম সিলেক্ট করা
+ 
+     form.addEventListener('submit', function(event) {
+         event.preventDefault(); // ডিফল্ট সাবমিশন বন্ধ করা
+ 
+         // পপ-আপ তৈরি করা
+         const popup = document.createElement('div');
+         popup.style.position = 'fixed';
+         popup.style.top = '0';
+         popup.style.left = '0';
+         popup.style.width = '100%';
+         popup.style.height = '100%';
+         popup.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+         popup.style.color = 'white';
+         popup.style.display = 'flex'; // ফ্লেক্সবক্স ব্যবহার করা
+         popup.style.flexDirection = 'column'; // ভাটিক্যাল স্ট্যাক
+         popup.style.justifyContent = 'center'; // উভয়ভাবে সেন্টার করা
+         popup.style.alignItems = 'center'; 
+         popup.style.textAlign = 'center';
+         popup.style.fontSize = '24px';
+         popup.style.zIndex = '9'; 
+         popup.id = 'popup';
+ 
+         // পপ-আপের কন্টেন্ট
+         const message = document.createElement('p');
+         message.innerText = 'অর্ডার প্রসেস চলছে 😍';
+         message.style.margin = '10px 0'; // ভার্টিক্যাল মার্জিন
+ 
+         const countdownText = document.createElement('p');
+         countdownText.innerHTML = 'বাকি: <span id="countdown">21</span> সেকেন্ড';
+         countdownText.style.margin = '10px 0'; // ভার্টিক্যাল মার্জিন
+ 
+         popup.appendChild(message);
+         popup.appendChild(countdownText);
+ 
+         // পপ-আপ DOM এ অ্যাড করা
+         document.body.appendChild(popup);
+ 
+         // কাউন্টডাউন শুরু করা
+         let countdown = 20;
+         const countdownElement = document.getElementById('countdown');
+ 
+         const countdownInterval = setInterval(function() {
+             countdown--;
+             countdownElement.innerText = countdown;
+ 
+             if (countdown <= 0) {
+                 clearInterval(countdownInterval); // কাউন্টডাউন বন্ধ করা
+                 window.location.href = "https://sohoje.github.io/bajar/thank/index.html"; // নতুন লিংক লোড করা
+             }
+         }, 1000);
+ 
+         // ফর্ম সাবমিট করা (১০০ মিলিসেকেন্ডের বিলম্ব দিয়ে)
+         setTimeout(function() {
+             form.submit(); // ফর্ম সাবমিট করা
+         }, 100);
+     });
+ });
 
 // //share button
 
