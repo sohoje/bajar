@@ -136,7 +136,7 @@
     <label for="Bio" style="display: inline-block; padding: 10px 20px; background-color: #00bfff66; color: #35373e; font-size: 13px; border-radius: 25px; cursor: pointer;">
       Upload Your CV
     </label>
-    <input type="file" name="attachment" id="Bio" accept="image/png, image/jpeg"
+    <input type="file" name="attachment" id="Bio" accept=".pdf, .doc, .docx, .xls, .xlsx, image/png, image/jpeg"
       style="display: none;" required onchange="document.getElementById('fileName').textContent = this.files[0]?.name || '';">
     <span id="fileName" style="margin-left: 10px; font-size: 12px; color: #333;"> </span>
   </fieldset>
