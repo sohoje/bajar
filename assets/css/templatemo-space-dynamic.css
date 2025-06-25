@@ -297,7 +297,7 @@ header
 .header-area .main-nav .logo h4 {
     font-size: 24px;
     font-weight: 700;
-    text-transform: uppercase;
+/*     text-transform: uppercase; */
     color: #03a4ed;
     line-height: 100px;
     float: left;
